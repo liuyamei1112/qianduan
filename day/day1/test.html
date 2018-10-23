@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+           /* span{
+               width: 200px;
+               height: 200px;
+               display: block;
+               margin: 0 auto;
+               line-height: 200px;
+               text-align: center;
+               border: 5px solid black;
+               border-radius: 200px;
+               background: -webkit-linear-gradient(left top,red, blue,green);
+               box-shadow: 3px 3px 3px 3px #cccccc;
+           }
+        .ff{
+            width: 400px;
+            height: 200px;
+            border:3px solid black;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 200px;
+        } */
+        .box{
+            width: 100px;
+            height: 100px;
+            background: #cccccc;
+            border: 10px dashed #000;
+            padding: 20px;
+            /* box-sizing: border-box;变成盒子原来大小，针对IE浏览器 */
+        }
+    </style>
+    <!--
+        常见行内元素：span , a , em, i ,strong
+        常见块状元素：div h系列 ul(ol) header main footer
+        标签语义化：对应的标签于对应的是
+        css 盒子模型 内容 内填充 边框
+        id选择器权重 100
+        类名选择器权重class 10
+        标签选择器权重 1
+        行内选择器最高
+    -->
+</head>
+<body>
+    <!-- <span>石家庄职业技术学院</span>
+    <img src="" alt="">
+    <span>1424244356</span>
+    <div class="ff">前段培优班</div> -->
+    <div class="box">石家庄职业技术学院</div>
+    <script>
+        //   var x=y=z=[1,2,3,4];//数组属于引用数据类型
+        //   console.log(x==y);//true
+        //   z[4]=5;//给Z添加一项 索引为4项
+        //   //[4]代表下标，数组中有这一项就是修改，没有就是添加，下标从0开始数
+        //   console.log(z);
+        //   console.log(x,y);
+        //   z=[10,20,30];
+        //   console.log(x,y,z);
+
+        //   //第二题
+        //   var str='123.23q';//NaN(not a number) null none
+        //   // 空字符串或者字符串只有空格，那么number得到的结果都是0
+        //   console.log(Number(str));//Number把其他东西转成数字，空字符串得到0
+        //   console.log(parseInt(str));//只要第一个字符是非数字，那么结果就是NaN;若第一个是数字，则往后查找，查找到非数字时，停止查找
+        //第三题
+        //   function sum(a,b,c)//形参
+        //   {   
+        //     //   console.log(arguments[1]);//arguments实际参数集合
+        //     //   console.log(a,b,c);
+        //     //   return 6; 
+        //     // for(var i=0;i<arguments.length;i++){
+        //     //       console.log(i);
+        //     // }
+        //     var total=0;   
+        //     for(var i=0;i<arguments.length;i++){
+        //         console.log(arguments[i]);
+        //         //total +=arguments[i];
+        //         total=total+arguments[i];
+        //     } 
+        //     return total;              
+        //   }
+        //   var q=sum(1,2,3,4,5);//实参
+        //   console.log(q);
+        //第四题
+          var n=4%5;//4 %求余
+          if(n>=2 && n<=3){
+              //n大于等于2 或 n小于等于3
+              console.log(2);//并且
+          }
+          if(n>=2 || n<=3){
+              console.log('any number');//或者  任何数字都可以 
+          }
+          //boolean 布尔数据类型 有5个是false，其他全是true
+          //0 NaN '' none undefined
+          //!代表取非 
+          //！！代表取反后，再取反     ！！1 == Boolean(1) 相当于Boolean()转化
+          var a=1 || 2;//看前面
+          var b=1 && 2;//两个都看 第一个成立，看下一个，二者必须都满足
+          //若第一个数不满足，就不管第二个数，直接输出第二个
+         
+          //对于 && 来说
+          //前边成立给后边，前边不成立给前边
+
+          //对于 || 来说
+          //前边成立给前边， 前边不成立给后边
+          console.log(a,b);
+          //== 相对比较  会把两边数据类型转化成同一种去比较
+          // ===绝对等于 ，直接判断类型  先看两边是不是同一类型，若不是直接就是false，若是则再去比较是否相等
+          console.log('0'==0);//把两边都转成数字在进行比较
+          //先把引用数据类型转化成字符串型，在把字符串转化成数字，在进行比较
+          console.log([] == false);//true 先把引用 toString()数据类型转化成字符串，在把字符串转化成数字
+          console.log(![] == false);//true
+
+
+       /*js中数据类型分为两大类
+         基本数据类型（值类型）：string number Boolean none undefined
+         引用数据类型[] {} function Data Math 正则...
+         基本数据类型操作的都是一个值，引用数据类型操作的都是一个地址
+       */ 
+       var name='珠峰', age=9;//var name='';var age=9;
+       console.log('我的名字是'+name+'我的年龄是'+age);
+       //es6 字符串模板
+       var str=`我的名字是${name} 我的年龄是${age}`
+       console.log(str);
+       var str2='124\'456';//若想用单引号包含单引号，我们需要用 \ 把字符串中的单引号转义 
+       
+
+       var str='123 石家庄';
+       str.replace(123,'美丽的');
+       console.log(str);
+
+       //number类型 NaN
+       NaN == NaN  //false 结果永远不相等
+       Number();
+       parseInt();
+       parseFloat();
+       1/'a'
+       isNaN(1/'a')//判断参数是否是NaN 若是则返回true，否则返回false
+       null == undefined //true
+       null === undefined //false
+       typeof(1) //查看数值类型用的
+       var s= typeof typeof 1//在控制台上写 'string'
+       typeof typeof typeof 12//'string'
+
+       //boolean
+       //Boolean; | ;||
+       Number([1])
+       var obj={name:'zh',age:9};
+       console.log(obj.name)
+    //对象中获取 属性值的两种方法 一种是打点
+    //另一种是[],中括号的这种方式一般适用于 属性值是通过变量获取的情况
+    switch('1'){
+        case 0:
+        console.log(0)
+        break;
+        case 1:
+        console.log(1)
+        break;
+        default:
+        break;
+    }
+   
+   for(var i=0;i<10; i++){
+    switch(i%4){
+        case 1:
+          i+=1;
+          break;
+        case 3:
+          i+=1;//i=i+1
+          break;
+        case 0:
+          i+=2;
+          break;
+        case 2:
+          i+=2;
+          break;
+        default:
+          i+=4;
+    }
+   }
+   console.log(i);
+        //i=0; 0<10; -->i+=2 -->2 -->3
+        //i=3; 3<10; -->i+=1 -->5 -->6
+        //i=6; 6<10; -->i+=2 -->8 -->9
+        //i=9; 9<10; -->i+=1 -->10 --> 11
+
+        // i = 0 ; 0 < 10 ; ---> i+=2 --> 2 -->3
+// i = 3 ; 3 < 10; ---> i+=1 --> 4 -->5
+// i = 5 ; 5 < 10; ---> i+=1 --> 6 -->7
+// i = 7 ; 7 < 10; ---> i+=1 --> 8 -->9
+// i = 9 ; 9 < 10; ---> i+=1 --> 10 --> 11
+// i =11 ; 11 < 10;结束循环
+      
+    </script>
+
+</body>
+</html>

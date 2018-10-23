@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button >1</button>
+    <button >2</button>
+    <button >3</button>
+    <button >4</button>
+
+</body>
+</html> 
+<script>
+    // var ary =[1,2,3,4];
+    // var obj ={name:'zf',age:9};
+    // obj.name;
+    // var a='name'
+    // //obj.a
+    // //obj['a']
+    // //obj[a] 等价于 obj['name']
+    // for(var k in obj){
+    // //k对象中的属性名
+    // console.log(k);
+    // console.log([k]);
+    // }
+    var oBtns=document.getElementsByTagName('button'); 
+    for(let i=0;i<oBtns.length;i++){
+        oBtns[i].onclick=function(){
+            //alert(this).innerHTML;
+            alert(i);
+        }
+    }
+
+
+     function fh(){
+        // return;  有两个作用，一个打断函数的执行
+        //另一个是 返回结果给外界，不写return时默认返回undefined
+        console.log(111);
+     }
+     var n=fh();
+     console.log(n);
+</script>
